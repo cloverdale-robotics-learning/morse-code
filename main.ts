@@ -1,5 +1,6 @@
 input.onButtonPressed(Button.A, function () {
     list.push(0)
+    music.play(music.tonePlayable(494, music.beat(BeatFraction.Eighth)), music.PlaybackMode.InBackground)
     basic.showLeds(`
         . . . . .
         . . . . .
@@ -7,7 +8,6 @@ input.onButtonPressed(Button.A, function () {
         . . . . .
         . . . . .
         `)
-    music.play(music.tonePlayable(494, music.beat(BeatFraction.Eighth)), music.PlaybackMode.InBackground)
     basic.pause(200)
     basic.clearScreen()
 })
@@ -21,6 +21,7 @@ radio.onReceivedString(function (receivedString) {
 })
 input.onButtonPressed(Button.B, function () {
     list.push(1)
+    music.play(music.tonePlayable(494, music.beat(BeatFraction.Half)), music.PlaybackMode.InBackground)
     basic.showLeds(`
         . . . . .
         . . . . .
@@ -28,7 +29,6 @@ input.onButtonPressed(Button.B, function () {
         . . . . .
         . . . . .
         `)
-    music.play(music.tonePlayable(494, music.beat(BeatFraction.Half)), music.PlaybackMode.InBackground)
     basic.pause(200)
     basic.clearScreen()
 })
@@ -84,6 +84,3 @@ let MORSE_CODE: { [key: string]: number[] } = {
     " ": [],
 };
 list = []
-basic.forever(function () {
-	
-})
